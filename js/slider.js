@@ -19,6 +19,7 @@ const nextCardInStartSet = () => {
 const createPetCard = (petNumber) => {
     const card = document.createElement('div');
     card.classList.add('pet-card');
+    card.setAttribute('id','pet-card');
 
     let cardImage = document.createElement('img');
     cardImage.setAttribute('src',`${pets[petNumber].img}`);
@@ -32,6 +33,7 @@ const createPetCard = (petNumber) => {
 
     let cardButton = document.createElement('div');
     cardButton.classList.add('card-button');
+    cardButton.setAttribute('id','card-button');
     cardButton.textContent = "Learn more";
     card.appendChild(cardButton);
 
@@ -41,7 +43,6 @@ const createPetCard = (petNumber) => {
 const createCoruselCards = (cardNumber) => {
     let card;
     for(let i=0; i<cardNumber; i++){
-        console.log(i);
         card = createPetCard(startCardIndex);
         petsCoruselLeftSet.append(card);
         nextCardInStartSet();
@@ -74,7 +75,7 @@ createCardsInCorusel();
 const movieLeft = () => {
     let changedItem;
     changedItem = petsCoruselRightSet;
-    changedItem.innerHTML = "";
+    changedItem.innerHTML='';
     if (clinetWidth < 780) {
         nextCardInStartSet();
         const card = createPetCard(startCardIndex);
@@ -102,7 +103,7 @@ const movieLeft = () => {
 const movieRight = () => {
     let changedItem;
     changedItem = petsCoruselLeftSet;
-    changedItem.innerHTML = "";
+    changedItem.innerHTML='';
     if (clinetWidth < 780) {
         nextCardInStartSet();
         const card = createPetCard(startCardIndex);
@@ -142,6 +143,7 @@ petsSlider.addEventListener('animationend', (animation) => {
         petsSlider.classList.remove('transition-left');
     }
 
-    coruselPrevButton.addEventListener('click', movieLeft);
-    coruselNextButton.addEventListener('click', movieRight);
+    coruselPrevButton.addEventListener('click', movieRight);
+    coruselNextButton.addEventListener('click', movieLeft);
 });
+

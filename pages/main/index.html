@@ -92,7 +92,7 @@
         </div>
     </section>
 
-    <section class="help">
+    <section class="help" id="help">
         <div class="container">
             <h3 class="help-title">How you can help our shelter</h3>
             <div class="help-list">
@@ -158,7 +158,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-contact">
                 <h3 class="footer-contact__title">For questions and suggestions</h3>
@@ -195,7 +195,41 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="./pets.js"></script>
-    <script type="module" src="./slider.js"></script>
+    <div class="popup-layer" id="popup-layer">
+        <div class="popup" id="popup">
+            <div class="popup__image-wrapper">
+                <img  alt="popup__image" id="popup__image" class="popup__image">
+            </div>
+            <div class="popup__content-wrapper">
+                <h3 class="popup__title" id="popup__title"></h3>
+                <h4 class="popup__type" id="popup__type"></h4>
+                <h5 class="popup__description" id="popup__description"></h5>
+                <ul class="popup-about__wrapper">
+                    <li class="popup-about__item">
+                        <span class="popup-about__item-title">Age:</span>
+                        <span class="popup-about__item-text" id="popup-about__item-text__age"></span>
+                    </li>
+                    <li class="popup-about__item">
+                        <span class="popup-about__item-title">Inoculations:</span>
+                        <span class="popup-about__item-text" id="popup-about__item-text__inoculations"></span>
+                    </li>
+                    <li class="popup-about__item">
+                        <span class="popup-about__item-title">Diseases:</span>
+                        <span class="popup-about__item-text" id="popup-about__item-text__diseases"></span>
+                    </li>
+                    <li class="popup-about__item">
+                        <span class="popup-about__item-title">Parasites:</span>
+                        <span class="popup-about__item-text" id="popup-about__item-text__parasites"></span>
+                    </li>
+                </ul>
+                <div class="popup__close-button" id="popup__close-button">
+                    <img src="../../assets/images/close.png" alt="close">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../../js/pets.js"></script>
+    <script type="module" src="../../js/slider.js"></script>
+    <script type="module" src="../../js/popup.js"></script>
 </body>
 </html>
