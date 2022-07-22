@@ -1,0 +1,78 @@
+@import 'reset.css';
+.container {
+  width: 1200px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .container .header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.header .container .header-logo .header-logo__main-title {
+  font-family: "Georgia";
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin-bottom: 10px;
+}
+.header .container .header-logo .header-logo__under-title {
+  font-family: "Arial";
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #292929;
+}
+.header .container .header-menu .header-menu__wrapper {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item:last-child {
+  margin-right: 0;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item a {
+  font-family: "Arial";
+  font-size: 15px;
+  line-height: 160%;
+  color: #545454;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item a:hover {
+  transition: 0.5s;
+  color: #292929;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item_active {
+  border-bottom: 3px #f1cdb3 solid;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item_active:hover {
+  transition: 0.5s;
+  border-bottom: 3px #545454 solid;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item_active a {
+  color: #292929;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item_active a:hover {
+  transition: 0.5s;
+  color: #545454;
+}
+.header .container .header-menu .header-menu__wrapper .header-menu__item_active a:active {
+  transition: 0.5s;
+  color: #292929;
+}/*# sourceMappingURL=style.css.map */
