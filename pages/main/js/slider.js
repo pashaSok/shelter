@@ -1,4 +1,4 @@
-import {pets}  from "./pets.js";
+import {pets}  from "../../../js/pets.js";
 
 const clinetWidth = document.documentElement.clientWidth;
 const petsSlider = document.getElementById('pets-corusel__slide');
@@ -60,7 +60,7 @@ const createCardsInCorusel = () => {
         cardNumber=3;
         createCoruselCards(cardNumber);
     }
-    else if(clinetWidth < 780){
+    else if(clinetWidth < 768){
         cardNumber=1;
         createCoruselCards(cardNumber);
     }
@@ -76,7 +76,7 @@ const movieLeft = () => {
     let changedItem;
     changedItem = petsCoruselRightSet;
     changedItem.innerHTML='';
-    if (clinetWidth < 780) {
+    if (clinetWidth < 768) {
         nextCardInStartSet();
         const card = createPetCard(startCardIndex);
         petsCoruselRightSet.append(card);
@@ -104,7 +104,7 @@ const movieRight = () => {
     let changedItem;
     changedItem = petsCoruselLeftSet;
     changedItem.innerHTML='';
-    if (clinetWidth < 780) {
+    if (clinetWidth < 768) {
         nextCardInStartSet();
         const card = createPetCard(startCardIndex);
         petsCoruselLeftSet.append(card);

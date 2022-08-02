@@ -1,6 +1,6 @@
 @import 'reset.css';
 
-$hoverColor:#fddcc4;
+$hoverColor:#e8c1a5;
 $activeColor:#f1cdb3;
 
 .container{
@@ -10,10 +10,14 @@ $activeColor:#f1cdb3;
 }
 .header{
     height: 120px;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 60px;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
 
     .container{
         display: flex;
@@ -103,6 +107,319 @@ $activeColor:#f1cdb3;
 
         }
 
+    }
+
+}
+
+.our-pets{
+    padding: 80px 0 100px 0;
+    background: #f6f6f6;
+    transform: translateY(120px);
+
+    .container{
+
+        .our-pets__title{
+            display: flex;
+            align-items: center;
+            font-family: 'Georgia';
+            font-size: 35px;
+            line-height: 130%;
+            text-align: center;
+            letter-spacing: 0.06em;
+            color: #545454;
+            width: 400px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+        }
+
+        .our-pets__cards-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 30px;
+            column-gap: 40px;
+            margin-bottom: 60px;
+
+            .pet-card{
+                width: 270px;
+                height: 435px;
+                background: #fafafa;
+                border-radius: 9px 9px 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                box-sizing: border-box;
+
+                &:hover{
+
+                    cursor: pointer;
+
+                    .card-button{
+
+                        &:hover{
+                            cursor: pointer;
+                            transition: 0.5s;
+                            background: $hoverColor;
+                            border: 2px solid $hoverColor;
+                        }
+    
+                        &:active{
+                            border: 2px solid $activeColor;
+                            transition: 0.5s;
+                            background: $activeColor;
+                        }
+
+                    }
+                }
+
+                .pet-image{
+                    width: 270px;
+                    height: 270px;
+                    margin-bottom: 30px;
+                }
+
+                .pet-name{
+                    display: inline-block;
+                    font-family: 'Georgia';
+                    font-size: 20px;
+                    line-height: 23px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    letter-spacing: 0.06em;
+                    color: #545454;
+                    margin-bottom: 30px;
+                }
+
+                .card-button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 183px;
+                    height: 48px;
+                    font-family: 'Georgia';
+                    font-size: 17px;
+                    line-height: 130%;
+                    letter-spacing: 0.06em;
+                    color: #292929;
+                    border: 2px solid #f1cdb3;
+                    border-radius: 100px;
+                    margin-bottom: 30px;
+
+                    &:hover{
+                        cursor: pointer;
+                        transition: 0.5s;
+                        background: $hoverColor;
+                        border: 2px solid $hoverColor;
+                    }
+
+                    &:active{
+                        border: 2px solid $activeColor;
+                        transition: 0.5s;
+                        background: $activeColor;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .our-pets__buttons-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 20px;
+            margin: 0 auto;
+
+            .our-pets__button{
+                width: 52px;
+                height: 52px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-family: 'Georgia';
+                font-size: 20px;
+                line-height: 115%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                letter-spacing: 0.06em;
+                color: #292929;
+                border: 2px solid #f1cdb3;
+                border-radius: 100px;
+
+                &:hover{
+                    cursor: pointer;
+                    transition: 0.5s;
+                    background: $hoverColor;
+                }
+
+                &:active{
+                    transition: 0.5s;
+                    background: $activeColor;
+                }
+
+            }   
+
+            .our-pets__button_disable{
+                color: #cdcdcd;
+                border: 2px solid #cdcdcd;
+
+                &:hover{
+                    cursor: auto;
+                    background: #f6f6f6;
+                }
+
+            }
+
+            .our-pets__button-active{
+                background: #f1cdb3;
+
+                &:hover{
+                    transition: 0.5s;
+                    background: $hoverColor;
+                }
+
+                &:active{
+                    transition: 0.5s;
+                    background: $activeColor;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.popup-active{
+    display: block !important;
+}
+
+.popup-layer{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    display: none;
+
+    .popup{
+        display: flex;
+        background: #fafafa;
+        border-radius: 9px;
+        width: 900px;
+        height: 500px;
+        position: fixed;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+        .popup__image-wrapper{
+            width: 500px;
+            z-index: 1;
+
+            .popup__image{
+                width: 100%;
+                height: 100%;
+                border-radius: 9px;
+            }
+
+        }
+    
+        .popup__content-wrapper{
+            position: relative;
+            width: 400px;
+            z-index: 1;
+            padding: 50px 20px 30px 50px;
+            font-family: 'Georgia';
+            color: #000000;
+            letter-spacing: 0.06em;
+
+            
+            .popup__close-button{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 52px;
+                height: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid #f1cdb3;
+                border-radius: 100px;
+                transform: translate(52px, -52px);
+
+                &:hover{
+                    cursor: pointer;
+                    transition: 0.5s;
+                    background: $hoverColor;
+                    border: 2px solid $hoverColor;
+                }
+
+                &:active{
+                    transition: 0.5s;
+                    background: $activeColor;
+                    border: 2px solid $activeColor;
+                }
+
+            }
+
+            .popup__title{
+                font-family: 'Georgia';
+                font-size: 35px;
+                line-height: 130%;
+                margin-bottom: 10px;
+            }
+
+            .popup__type{
+                font-size: 20px;
+                line-height: 115%;
+                margin-bottom: 40px;
+            }
+
+            .popup__description{
+                font-size: 15px;
+                line-height: 110%;
+                margin-bottom: 40px;
+            }
+
+            .popup-about__wrapper{
+                
+                .popup-about__item{
+                    margin-bottom: 11px;
+                    font-size: 15px;
+                    line-height: 110%;
+
+                    &::before{
+                        font-family: 'Montserrat', sans-serif;
+                        color: #f1cdb3;
+                        content: "•";
+                        padding-right: 10px;
+                    }
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+                    .popup-about__item-title{
+                        font-weight: bold;
+                    }
+
+                }
+
+            }
+
+        }
+    
     }
 
 }
