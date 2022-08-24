@@ -83,9 +83,8 @@
 }
 
 .our-pets {
-  padding: 80px 0 100px 0;
+  padding: 200px 0 100px 0;
   background: #f6f6f6;
-  transform: translateY(120px);
 }
 .our-pets .container .our-pets__title {
   display: flex;
@@ -231,6 +230,91 @@
 .our-pets .container .our-pets__buttons-wrapper .our-pets__button-active:active {
   transition: 0.5s;
   background: #f1cdb3;
+}
+
+.footer {
+  padding-top: 40px;
+  background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 160px;
+       column-gap: 160px;
+}
+.footer .container .footer-contact__wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 16px;
+  -moz-column-gap: 160px;
+       column-gap: 160px;
+  margin-bottom: 40px;
+}
+.footer .container .footer-contact__wrapper .footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 40px;
+}
+.footer .container .footer-contact__wrapper .footer-contact:first-child .footer-contact__title {
+  width: 279px;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__title {
+  width: 278px;
+  font-family: "Georgia";
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item:hover .footer-contact__icon-wrapper .footer-contact__icon {
+  transition: 0.5s;
+  fill: #e8c1a5;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item:hover .footer-contact__item__text {
+  transition: 0.5s;
+  color: #e8c1a5;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item:active .footer-contact__icon-wrapper .footer-contact__icon {
+  transition: 0.5s;
+  fill: #f1cdb3;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item:active .footer-contact__item__text {
+  transition: 0.5s;
+  color: #f1cdb3;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item .footer-contact__icon-wrapper {
+  margin-right: 20px;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item .footer-contact__icon-wrapper .footer-contact__icon {
+  fill: #f1cdb3;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item .footer-contact__icon-wrapper .footer-icon-mail {
+  width: 40px;
+  height: 26px;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item .footer-contact__icon-wrapper .footer-icon-phone {
+  width: 40px;
+  height: 32px;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item .footer-contact__icon-wrapper .footer-icon-pin {
+  width: 22px;
+  height: 32px;
+}
+.footer .container .footer-contact__wrapper .footer-contact .footer-contact__item .footer-contact__item__text {
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+.footer .container .footer-image {
+  line-height: 0;
 }
 
 .popup-active {

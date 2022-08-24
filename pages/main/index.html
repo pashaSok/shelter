@@ -12,6 +12,7 @@
 
 </head>
 <body>
+    <div class="burger-menu-background" id="burger-menu-background"></div>
     <section class="start-screen">
         <header class="header">
             <div class="container">
@@ -19,12 +20,16 @@
                     <h1 class="header-logo__main-title">Cozy House</h1>
                     <span class="header-logo__under-title">Shelter for pets in Boston</span>
                 </a>
-                <div class="burger">
+                <div class="burger" id="burger">
                     <span class="burger-line"></span>
                     <span class="burger-line"></span>
                     <span class="burger-line"></span>
                 </div>
-                <div class="burger-menu">
+                <div class="burger-menu" id="burger-menu">
+                    <a class="header-logo" href="#">
+                        <h1 class="header-logo__main-title">Cozy House</h1>
+                        <span class="header-logo__under-title">Shelter for pets in Boston</span>
+                    </a>
                     <ul class="header-menu__wrapper">
                         <li class="header-menu__item header-menu__item_active"><a href="#">About the shelter</a></li>
                         <li class="header-menu__item"><a href="../pets/index.html">Our pets</a></li>
@@ -248,5 +253,6 @@
     <script type="module" src="../../js/pets.js"></script>
     <script type="module" src="./js/slider.js"></script>
     <script type="module" src="./js/popup.js"></script>
+    <script src="../../js/burger.js"></script>
 </body>
 </html>

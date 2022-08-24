@@ -112,9 +112,8 @@ $activeColor:#f1cdb3;
 }
 
 .our-pets{
-    padding: 80px 0 100px 0;
+    padding: 200px 0 100px 0;
     background: #f6f6f6;
-    transform: translateY(120px);
 
     .container{
 
@@ -296,6 +295,134 @@ $activeColor:#f1cdb3;
     }
 
 }
+
+.footer{
+    padding-top: 40px;
+    background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%) , #211f20;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 160px;
+
+        .footer-contact__wrapper{
+            display: flex;
+            align-items: flex-start;
+            padding-top: 16px;
+            column-gap: 160px;
+            margin-bottom: 40px;
+
+            .footer-contact{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 40px;
+
+                &:first-child{
+    
+                    .footer-contact__title{
+                        width: 279px;
+                    }
+    
+                }
+    
+                .footer-contact__title{
+                    width: 278px;
+                    font-family: 'Georgia';
+                    font-size: 35px;
+                    line-height: 45px;
+                    letter-spacing: 0.06em;
+                    color: #fff;
+                }
+    
+                .footer-contact__item{
+                    display: flex;
+                    align-items: center;
+                    height: 32px;
+    
+                    &:hover{
+    
+                        .footer-contact__icon-wrapper{
+    
+                            .footer-contact__icon{
+                                transition: 0.5s;
+                                fill: $hoverColor;
+                            }
+    
+                        }
+    
+                        .footer-contact__item__text{
+                            transition: 0.5s;
+                            color: $hoverColor;
+                        }
+    
+                    }
+    
+                    &:active{
+    
+                        .footer-contact__icon-wrapper{
+    
+                            .footer-contact__icon{
+                                transition: 0.5s;
+                                fill: $activeColor;
+                            }
+    
+                        }
+    
+                        .footer-contact__item__text{
+                            transition: 0.5s;
+                            color: $activeColor;
+                        }
+    
+                    }
+    
+                    .footer-contact__icon-wrapper{
+                        margin-right: 20px;
+    
+                        .footer-contact__icon{
+                            fill: #f1cdb3;
+                        }
+    
+                        .footer-icon-mail{
+                            width: 40px;
+                            height: 26px;
+                        }
+    
+                        .footer-icon-phone{
+                            width: 40px;
+                            height: 32px;
+                        }
+    
+                        .footer-icon-pin{
+                            width: 22px;
+                            height: 32px;
+                        }
+    
+                    }
+    
+                    .footer-contact__item__text{
+                        font-family: 'Georgia';
+                        font-size: 20px;
+                        line-height: 23px;
+                        letter-spacing: 0.06em;
+                        color: #f1cdb3;
+                    }
+    
+                }
+    
+            }
+
+        }
+
+
+        .footer-image{
+            line-height: 0;
+        }
+
+    }
+
+}
+
 
 .popup-active{
     display: block !important;

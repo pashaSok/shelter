@@ -31,6 +31,22 @@ const generateBigArray=()=>{
 
 let bigArr = generateBigArray();
 
+const clientWidth = () =>{
+    if(clinetWidth >= 1200){
+        maxPages = 6;
+        cardNumbers = 8;
+    }
+    else if(clinetWidth <= 780){
+        maxPages = 16;
+        cardNumbers =3;
+    }
+    else {
+        maxPages = 8;
+        cardNumbers=6;
+    }
+}
+clientWidth();
+
 const createPetCard = (petNumber) => {
     const card = document.createElement('div');
     card.classList.add('pet-card');
@@ -55,36 +71,22 @@ const createPetCard = (petNumber) => {
     return card;
 }
 
-const createCards = (cardNumber)=>{
+const createCards = (cardNumbers, startIndexInActiveArray,lastIndexInActiveArray)=>{
     let card;
     lastIndexInActiveArray = cardNumbers;
     activeArray = bigArr.slice(startIndexInActiveArray, lastIndexInActiveArray);
-    console.log(activeArray);
     for(let i = 0;i<activeArray.length;i++){
         card = createPetCard(activeArray[i]);
         ourPetsCardsWrapper.appendChild(card);
     }
 }
 
-const createPagesNumber = () =>{
-    if(clinetWidth >= 1200){
-        maxPages = 6;
-        cardNumbers = 8;
-        createCards(cardNumbers);
-    }
-    else if(clinetWidth <= 780){
-        maxPages = 16;
-        cardNumbers =3;
-        createCards(cardNumbers);
-    }
-    else {
-        maxPages = 8;
-        cardNumbers=6;
-        createCards(cardNumbers);
-    }
+const createPagesNumber = (cardNumbers) =>{
+    createCards(cardNumbers);
 }
 
 createPagesNumber();
+
 
 paginationButtonFirst.addEventListener('click', () => {
     pageNumber = 1;
@@ -108,6 +110,8 @@ paginationButtonLeft.addEventListener('click',()=>{
         paginationButtonFirst.classList.add('our-pets__button_disable');
         paginationButtonLeft.classList.add('our-pets__button_disable');
     };
+    ourPetsCardsWrapper.innerHTML='';
+    createPagesNumber();
 });
 
 paginationButtonRight.addEventListener('click', ()=>{
@@ -121,6 +125,8 @@ paginationButtonRight.addEventListener('click', ()=>{
         paginationButtonRight.classList.add('our-pets__button_disable');
         paginationButtonLast.classList.add('our-pets__button_disable');
     }
+    ourPetsCardsWrapper.innerHTML='';
+    createPagesNumber();
 });
 
 paginationButtonLast.addEventListener('click', () => {
