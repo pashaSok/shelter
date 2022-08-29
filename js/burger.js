@@ -2,7 +2,7 @@ const burger = document.querySelector('.burger');
 const burgerMenu = document.getElementById('burger-menu');
 const body = document.getElementsByTagName('body')[0];
 const burgerMenuBackground = document.getElementById('burger-menu-background');
-const burgerMenuItems = document.querySelectorAll('.header-menu__item');
+const burgerMenuItems = document.querySelectorAll('.header-menu__item_burger');
 
 burger.addEventListener('click', e =>{
     if(e.target.classList.contains('burger')){
@@ -34,3 +34,7 @@ burgerMenuItems.forEach(item =>{
         burgerMenuBackground.classList.toggle('burger-menu-background_active');
     })
 })
+
+if(burger.style.display === 'none'){
+    body.classList.remove('plug');
+}
