@@ -10,8 +10,8 @@ const ourPetsCardsWrapper = document.getElementById('our-pets__cards-wrapper');
 
 let pageNumber = 1;
 let maxPages;
-let activeArray=[];
 let startIndexInActiveArray=0;
+let activeArray=[];
 let cardNumbers;
 let lastIndexInActiveArray;
 
@@ -30,22 +30,6 @@ const generateBigArray=()=>{
 }
 
 let bigArr = generateBigArray();
-
-const clientWidth = () =>{
-    if(clinetWidth >= 1200){
-        maxPages = 6;
-        cardNumbers = 8;
-    }
-    else if(clinetWidth <= 780){
-        maxPages = 16;
-        cardNumbers =3;
-    }
-    else {
-        maxPages = 8;
-        cardNumbers=6;
-    }
-}
-clientWidth();
 
 const createPetCard = (petNumber) => {
     const card = document.createElement('div');
@@ -71,22 +55,46 @@ const createPetCard = (petNumber) => {
     return card;
 }
 
-const createCards = (cardNumbers, startIndexInActiveArray,lastIndexInActiveArray)=>{
+const clientWidth = () =>{
+    if(clinetWidth >= 1279){
+        maxPages = 6;
+        cardNumbers = 8;
+        lastIndexInActiveArray=8;
+    }
+    else if(clinetWidth <= 767){
+        maxPages = 16;
+        cardNumbers =3;
+        lastIndexInActiveArray=3;
+    }
+    else {
+        maxPages = 8;
+        cardNumbers=6;
+        lastIndexInActiveArray=6;
+    }
+}
+
+clientWidth();
+
+function activeArr(activeArray){
+    activeArray.splice(0,activeArray.length);
+    return  bigArr.filter((el,index)=>index>=startIndexInActiveArray && index<lastIndexInActiveArray);
+}
+
+const createCards = ()=>{
     let card;
-    lastIndexInActiveArray = cardNumbers;
-    activeArray = bigArr.slice(startIndexInActiveArray, lastIndexInActiveArray);
+    activeArray=activeArr(activeArray);
     for(let i = 0;i<activeArray.length;i++){
         card = createPetCard(activeArray[i]);
         ourPetsCardsWrapper.appendChild(card);
     }
 }
+createCards();
 
-const createPagesNumber = (cardNumbers) =>{
-    createCards(cardNumbers);
+ourPetsCardsWrapper.addEventListener('animationend',AnimationHandler,false);
+
+function AnimationHandler(){
+    ourPetsCardsWrapper.classList.remove('pagination-animation');
 }
-
-createPagesNumber();
-
 
 paginationButtonFirst.addEventListener('click', () => {
     pageNumber = 1;
@@ -95,8 +103,13 @@ paginationButtonFirst.addEventListener('click', () => {
     paginationButtonLeft.classList.add('our-pets__button_disable');
     paginationButtonRight.classList.remove('our-pets__button_disable');
     paginationButtonLast.classList.remove('our-pets__button_disable');
+    if(startIndexInActiveArray!==0){
+        ourPetsCardsWrapper.classList.add('pagination-animation');
+    }
     startIndexInActiveArray=0;
     lastIndexInActiveArray=cardNumbers;
+    ourPetsCardsWrapper.textContent='';
+    createCards();
 });
 
 paginationButtonLeft.addEventListener('click',()=>{
@@ -110,8 +123,13 @@ paginationButtonLeft.addEventListener('click',()=>{
         paginationButtonFirst.classList.add('our-pets__button_disable');
         paginationButtonLeft.classList.add('our-pets__button_disable');
     };
-    ourPetsCardsWrapper.innerHTML='';
-    createPagesNumber();
+    if(startIndexInActiveArray>0){
+        ourPetsCardsWrapper.classList.add('pagination-animation');
+        startIndexInActiveArray-=cardNumbers;
+        lastIndexInActiveArray-=cardNumbers;
+        ourPetsCardsWrapper.textContent='';
+        createCards();
+    }
 });
 
 paginationButtonRight.addEventListener('click', ()=>{
@@ -125,8 +143,13 @@ paginationButtonRight.addEventListener('click', ()=>{
         paginationButtonRight.classList.add('our-pets__button_disable');
         paginationButtonLast.classList.add('our-pets__button_disable');
     }
-    ourPetsCardsWrapper.innerHTML='';
-    createPagesNumber();
+    if(lastIndexInActiveArray<bigArr.length){
+        ourPetsCardsWrapper.classList.add('pagination-animation');
+        startIndexInActiveArray+=cardNumbers;
+        lastIndexInActiveArray+=cardNumbers;
+        ourPetsCardsWrapper.textContent='';
+        createCards();
+    }
 });
 
 paginationButtonLast.addEventListener('click', () => {
@@ -136,6 +159,11 @@ paginationButtonLast.addEventListener('click', () => {
     paginationButtonLast.classList.add('our-pets__button_disable');
     paginationButtonFirst.classList.remove('our-pets__button_disable');
     paginationButtonLeft.classList.remove('our-pets__button_disable');
-    startIndexInActiveArray=bigArr.length-1 - cardNumbers;
-    lastIndexInActiveArray = bigArr.length-1;
+    if(lastIndexInActiveArray!==bigArr.length){
+        ourPetsCardsWrapper.classList.add('pagination-animation');
+    }
+    lastIndexInActiveArray=bigArr.length;
+    startIndexInActiveArray=bigArr.length-cardNumbers;
+    ourPetsCardsWrapper.textContent='';
+    createCards();
 });

@@ -12,12 +12,31 @@
 
 </head>
 <body>
+    <div class="burger-menu-background" id="burger-menu-background"></div>  
+
     <header class="header">
         <div class="container">
             <a class="header-logo" href="../main/index.html">
                 <h1 class="header-logo__main-title">Cozy House</h1>
                 <span class="header-logo__under-title">Shelter for pets in Boston</span>
             </a>
+            <div class="burger" id="burger">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div>
+            <div class="burger-menu" id="burger-menu">
+                <a class="header-logo" href="#">
+                    <h1 class="header-logo__main-title">Cozy House</h1>
+                    <span class="header-logo__under-title">Shelter for pets in Boston</span>
+                </a>
+                <ul class="header-menu__wrapper">
+                    <li class="header-menu__item header-menu__item_burger header-menu__item_burger_active"><a href="../main/index.html">About the shelter</a></li>
+                    <li class="header-menu__item header-menu__item_burger"><a href="#">Our pets</a></li>
+                    <li class="header-menu__item header-menu__item_burger"><a href="../main/index.html#help">Help the shelter</a></li>
+                    <li class=" header-menu__item header-menu__item_burger"><a href="#footer">Contacts</a></li>
+                </ul>
+            </div>
             <div class="header-menu">
                 <ul class="header-menu__wrapper">
                     <li class="header-menu__item"><a href="../main/index.html">About the shelter</a></li>
@@ -28,9 +47,10 @@
             </div>
         </div>
     </header>
+
     <section class="our-pets">
         <div class="container">
-            <h3 class="our-pets__title">Our friends who are looking for a house</h3>
+            <h3 class="our-pets__title">Our friends who <br>are looking for a house</h3>
             <div class="our-pets__cards-wrapper" id="our-pets__cards-wrapper">
             </div>
             <div class="our-pets__buttons-wrapper">
@@ -42,6 +62,7 @@
             </div>
         </div>
     </section>
+
     <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-contact__wrapper">
@@ -81,6 +102,7 @@
             </div>
         </div>
     </footer>
+
     <div class="popup-layer" id="popup-layer">
         <div class="popup" id="popup">
             <div class="popup__image-wrapper">
@@ -114,8 +136,10 @@
             </div>
         </div>
     </div>
+
     <script type="module" src="../../js/pets.js"></script>
     <script type="module" src="./js/pagination.js"></script>
     <script type="module" src="./js/popup.js"></script>
+    <script src="../../js/burger.js"></script>
 </body>
 </html>

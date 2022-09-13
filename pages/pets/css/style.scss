@@ -8,6 +8,26 @@ $activeColor:#f1cdb3;
     padding: 0 40px;
     margin: 0 auto;
 }
+
+.plug{
+    overflow-y: clip;
+}
+
+.burger-menu-background{
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1000vh;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.burger-menu-background_active{
+    display: block;
+}
+
 .header{
     height: 120px;
     background: #fff;
@@ -15,7 +35,7 @@ $activeColor:#f1cdb3;
     align-items: center;
     justify-content: center;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     left: 0;
     right: 0;
 
@@ -23,6 +43,27 @@ $activeColor:#f1cdb3;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .burger{
+            display: none;
+            width: 30px;
+            height: 22px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .burger-line{
+                display: inline-block;
+                width: 30px;
+                height: 2px;
+                background-color: #f1cdb3;
+            }
+
+        }
+
+        .burger-menu{
+            display: none;
+        }
 
         .header-logo{
             display: flex;
@@ -118,11 +159,11 @@ $activeColor:#f1cdb3;
     .container{
 
         .our-pets__title{
-            display: flex;
-            align-items: center;
             font-family: 'Georgia';
             font-size: 35px;
-            line-height: 130%;
+            line-height: 45px;
+            display: flex;
+            align-items: center;
             text-align: center;
             letter-spacing: 0.06em;
             color: #545454;
@@ -150,6 +191,7 @@ $activeColor:#f1cdb3;
                 align-items: center;
                 justify-content: flex-start;
                 box-sizing: border-box;
+                transition: 0.5s ease-in-out;
 
                 &:hover{
 
@@ -234,6 +276,7 @@ $activeColor:#f1cdb3;
             margin: 0 auto;
 
             .our-pets__button{
+                box-sizing: border-box;
                 width: 52px;
                 height: 52px;
                 display: flex;
@@ -443,12 +486,13 @@ $activeColor:#f1cdb3;
         background: #fafafa;
         border-radius: 9px;
         width: 900px;
-        height: 500px;
+        height: auto;
         position: fixed;
         z-index: 3;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%,-50%);
+        -webkit-transform: translateY(-50%,-50%);
         
         .popup__image-wrapper{
             width: 500px;
@@ -464,9 +508,10 @@ $activeColor:#f1cdb3;
     
         .popup__content-wrapper{
             position: relative;
+            box-sizing: border-box;
             width: 400px;
             z-index: 1;
-            padding: 50px 20px 30px 50px;
+            padding: 50px 20px 0 30px;
             font-family: 'Georgia';
             color: #000000;
             letter-spacing: 0.06em;
@@ -483,7 +528,8 @@ $activeColor:#f1cdb3;
                 justify-content: center;
                 border: 2px solid #f1cdb3;
                 border-radius: 100px;
-                transform: translate(52px, -52px);
+                box-sizing: border-box;
+                transform: translate(42px, -52px);
 
                 &:hover{
                     cursor: pointer;
@@ -503,19 +549,22 @@ $activeColor:#f1cdb3;
             .popup__title{
                 font-family: 'Georgia';
                 font-size: 35px;
-                line-height: 130%;
+                line-height: 45px;
                 margin-bottom: 10px;
+                letter-spacing: 0.06em;
             }
 
             .popup__type{
                 font-size: 20px;
-                line-height: 115%;
+                line-height: 23px;
                 margin-bottom: 40px;
+                letter-spacing: 0.06em;
             }
 
             .popup__description{
                 font-size: 15px;
-                line-height: 110%;
+                line-height: 17px;
+                letter-spacing: 0.06em;
                 margin-bottom: 40px;
             }
 
@@ -524,13 +573,14 @@ $activeColor:#f1cdb3;
                 .popup-about__item{
                     margin-bottom: 11px;
                     font-size: 15px;
-                    line-height: 110%;
+                    line-height: 17px;
+                    letter-spacing: 0.06em;
 
                     &::before{
                         font-family: 'Montserrat', sans-serif;
                         color: #f1cdb3;
                         content: "•";
-                        padding-right: 10px;
+                        padding-right: 5px;
                     }
 
                     &:last-child{
@@ -547,6 +597,394 @@ $activeColor:#f1cdb3;
 
         }
     
+    }
+
+}
+
+.pagination-animation{
+    animation-name:  pogination-list;
+    animation-duration: 1s;
+}
+
+@keyframes pogination-list{
+    from {opacity: 0;}
+    to{opacity: 1;}
+}
+
+@keyframes movie-burger{
+    from {right: -100%;}
+    to{right: 0;}
+}
+
+@keyframes movie-burger-close{
+    from{right: 0;}
+    to{right: -100%;}
+}
+
+@media screen and (max-width:1279px){
+
+    .container{
+        padding: 0 30px;
+        width: auto;
+        max-width: 1200px;
+    }
+
+    .header{
+        align-items: center;
+
+        .container{
+            width: 100%;
+        }
+
+    }
+
+    .our-pets{
+
+        padding: 200px 0 76px 0;
+
+        .container{
+            
+            .our-pets__title{
+                margin-bottom: 30px;
+            }
+
+            .our-pets__cards-wrapper{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                row-gap: 30px;
+                column-gap: 40px;
+                margin: 0 94px;
+                margin-bottom: 40px;
+                justify-content: center;
+                justify-items: center;
+            }
+
+        }
+
+    }
+
+    .footer{
+        padding-top: 30px;
+
+        .container{
+            flex-direction: column;
+            padding: 0 64px;
+            align-items: center;
+
+            .footer-contact__wrapper{
+                padding-top: 0;
+                margin-bottom: 65px;
+                column-gap: 61px;
+            }
+        }
+
+    }
+
+    .popup-layer{
+
+        .popup{
+            width: 630px;
+            height: auto;
+
+            .popup__image-wrapper{
+                width: 350px;
+            }
+
+            .popup__content-wrapper{
+                width: 280px;
+                height: 350px;
+                box-sizing: border-box;
+                padding: 10px 9px 0 10px;
+
+                .popup__type{
+                    margin-bottom: 20px;
+                }
+
+                .popup__description{
+                    font-size: 13px;
+                    line-height: 14px;
+                    margin-bottom: 20px;
+                }
+
+                .popup-about__wrapper{
+
+                    .popup-about__item{
+                        margin-bottom: 6px;
+    
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+    
+                    }
+
+                }
+
+                .popup__close-button{
+                    transform: translate(28px, -52px);
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width:767px){
+
+    .container{
+        padding: 0 10px;
+    }
+
+    .header{
+
+        .container{
+
+            .burger{
+                transition: 0.5s;
+                z-index: 6;
+                display: flex;
+                margin-right: 43px;
+
+                &:hover{
+                    cursor: pointer;
+                    transition: 0.5s;
+
+                    .burger-line{
+                        background: $hoverColor;
+                    }
+
+                }
+
+            }
+
+            .burger_active{
+                transform: rotate(90deg);
+            }
+
+            .burger-menu{
+                animation: movie-burger-close 0.5s ease-in;
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                width: 320px;
+                right: -100%;
+                z-index: 5;
+                background: #292929;
+                height: 100%;
+                color: #fff;
+                top: 0;      
+                gap: 158px;
+
+                .header-logo{
+                    align-items: flex-start;
+                    margin-left: 10px;
+                    padding-top: 30px;
+                    justify-content: center;
+                    z-index: 1;
+    
+                    .header-logo__main-title{
+                        font-family: 'Georgia';
+                        font-size: 32px;
+                        line-height: 35px;
+                        letter-spacing: 0.06em;
+                        color: #f1cdb3;
+                        margin-bottom: 10px;
+                    }
+    
+                    .header-logo__under-title{
+                        font-family: 'Arial';
+                        font-size: 13px;
+                        line-height: 15px;
+                        display: flex;
+                        align-items: center;
+                        letter-spacing: 0.1em;
+                        color: #fff;
+                    }
+    
+                }
+
+                .header-menu__wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 auto;
+                    text-align: center;
+                    gap: 40px;
+
+                    .header-menu__item{
+
+                        &:last-child{
+                            margin-right: 0;
+                        }
+
+                        a{
+                            font-family: 'Arial';
+                            font-size: 32px;
+                            line-height: 51px;
+                            color: #cdcdcd;
+
+                            &:hover{
+                                transition: 0.5s;
+                                color: #fefefe;
+                            }
+
+                        }
+
+                    }
+
+                    .header-menu__item_active{
+                        border-bottom: 3px #f1cdb3 solid;
+
+                        &:hover{
+                            transition: 0.5s;
+                            border-bottom: 3px #fefefe solid;
+                        }
+
+                        a{
+                            color: #fafafa;
+
+                            &:hover{
+                                transition: 0.5s;
+                                color: #fefefe;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .burger-menu_active{
+                animation: movie-burger 0.5s ease-in-out;
+                right: 0;
+            }
+
+            .header-menu{
+                display: none;
+            }
+
+        }
+
+    }
+
+    .our-pets{
+
+        padding: 162px 0 42px 0;
+
+        .container{
+
+            .our-pets__title{
+                display: block;
+                width: 300px;
+                font-size: 25px;
+                line-height: 32px;
+                margin-bottom: 42px;
+            }
+
+            .our-pets__cards-wrapper{
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                margin-bottom: 42px;
+            }
+
+            .our-pets__buttons-wrapper{
+                column-gap: 10px;
+            }
+        }
+
+    }
+
+    .footer{
+
+        .container{
+
+            padding: 0 10px;
+
+            .footer-contact__wrapper{
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+
+                .footer-contact{
+                    margin-bottom: 40px;
+                    align-items: center;
+
+                    .footer-contact__title{
+                        font-size: 25px;
+                        line-height: 32px;
+                        text-align: center;
+                        width: auto;
+                    }
+
+
+                    .footer-contact__item{
+                        height: auto;
+                    }
+
+                    &:last-child{
+                        align-items: flex-start;
+
+                        .footer-contact__title{
+                            margin: 0 auto;
+                            align-items: center;
+                            width: 270px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .footer__image-wrapper{
+                display: flex;
+
+                .footer__image{
+                    width: 260px;
+                    height: 269px;
+                }
+
+            }
+
+        }
+
+    }
+
+    .popup-layer{
+
+        .popup{
+            width: 240px;
+            height: auto;
+
+            .popup__image-wrapper{
+                display: none;
+            }
+
+            .popup__content-wrapper{
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+
+                .popup__title{
+                    text-align: center;
+                }
+
+                .popup__type{
+                    text-align: center;
+                }
+
+                .popup__description{
+                    text-align: justify;
+                    margin-bottom: 24px;
+                }
+            }
+
+        }
+
     }
 
 }

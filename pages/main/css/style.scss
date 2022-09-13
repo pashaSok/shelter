@@ -765,6 +765,7 @@ $activeColor:#f1cdb3;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        -webkit-transform: translateY(-50%,-50%);
         
         .popup__image-wrapper{
             width: 500px;
