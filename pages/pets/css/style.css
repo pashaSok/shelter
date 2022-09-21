@@ -157,20 +157,6 @@
   box-sizing: border-box;
   transition: 0.5s ease-in-out;
 }
-.our-pets .container .our-pets__cards-wrapper .pet-card:hover {
-  cursor: pointer;
-}
-.our-pets .container .our-pets__cards-wrapper .pet-card:hover .card-button:hover {
-  cursor: pointer;
-  transition: 0.5s;
-  background: #e8c1a5;
-  border: 2px solid #e8c1a5;
-}
-.our-pets .container .our-pets__cards-wrapper .pet-card:hover .card-button:active {
-  border: 2px solid #f1cdb3;
-  transition: 0.5s;
-  background: #f1cdb3;
-}
 .our-pets .container .our-pets__cards-wrapper .pet-card .pet-image {
   width: 270px;
   height: 270px;
@@ -203,12 +189,6 @@
   border-radius: 100px;
   margin-bottom: 30px;
 }
-.our-pets .container .our-pets__cards-wrapper .pet-card .card-button:hover {
-  cursor: pointer;
-  transition: 0.5s;
-  background: #e8c1a5;
-  border: 2px solid #e8c1a5;
-}
 .our-pets .container .our-pets__cards-wrapper .pet-card .card-button:active {
   border: 2px solid #f1cdb3;
   transition: 0.5s;
@@ -240,11 +220,6 @@
   color: #292929;
   border: 2px solid #f1cdb3;
   border-radius: 100px;
-}
-.our-pets .container .our-pets__buttons-wrapper .our-pets__button:hover {
-  cursor: pointer;
-  transition: 0.5s;
-  background: #e8c1a5;
 }
 .our-pets .container .our-pets__buttons-wrapper .our-pets__button:active {
   transition: 0.5s;
@@ -772,5 +747,18 @@
   .popup-layer .popup .popup__content-wrapper .popup__description {
     text-align: justify;
     margin-bottom: 24px;
+  }
+}
+@media (hover: hover) {
+  .our-pets__button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background: #e8c1a5;
+  }
+  .card-button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background: #e8c1a5;
+    border: 2px solid #e8c1a5;
   }
 }/*# sourceMappingURL=style.css.map */

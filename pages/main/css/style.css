@@ -250,12 +250,6 @@
   border: 2px solid #f1cdb3;
   border-radius: 100px;
 }
-.pets .container .pets-slider__wrapper .pets-slider__arrow:hover {
-  cursor: pointer;
-  transition: 0.5s;
-  background: #fddcc4;
-  border: 2px solid #fddcc4;
-}
 .pets .container .pets-slider__wrapper .pets-slider__arrow:active {
   transition: 0.5s;
   background: #f1cdb3;
@@ -320,12 +314,6 @@
   border: 2px solid #f1cdb3;
   border-radius: 100px;
   margin-bottom: 30px;
-}
-.pets .container .pets-slider__wrapper .pets-slider__content .pets-corusel .pets-corusel__slide .pets-corusel__item .pet-card .card-button:hover {
-  cursor: pointer;
-  transition: 0.5s;
-  background: #fddcc4;
-  border: 2px solid #fddcc4;
 }
 .pets .container .pets-slider__wrapper .pets-slider__content .pets-corusel .pets-corusel__slide .pets-corusel__item .pet-card .card-button:active {
   border: 2px solid #f1cdb3;
@@ -458,14 +446,6 @@
   padding: 10px 15px;
   background: #f1cdb3;
   margin-bottom: 20px;
-}
-.donation .container .donation-content .donation__link-wrapper:hover {
-  transition: 0.5s;
-  background: #fddcc4;
-}
-.donation .container .donation-content .donation__link-wrapper:hover .donation__link-icon-wrapper .donation__link-icon {
-  transition: 0.5s;
-  fill: #fefefe;
 }
 .donation .container .donation-content .donation__link-wrapper:active {
   transition: 0.5s;
@@ -1202,5 +1182,19 @@
   .popup-layer .popup .popup__content-wrapper .popup__description {
     text-align: justify;
     margin-bottom: 24px;
+  }
+}
+@media (hover: hover) {
+  .pets-slider__arrow:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background: #fddcc4;
+    border: 2px solid #fddcc4;
+  }
+  .card-button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background: #fddcc4;
+    border: 2px solid #fddcc4;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -310,12 +310,12 @@ $activeColor:#f1cdb3;
                 border: 2px solid #f1cdb3;
                 border-radius: 100px;
 
-                &:hover{
-                    cursor: pointer;
-                    transition: 0.5s;
-                    background: $hoverColor;
-                    border: 2px solid $hoverColor;
-                }
+                // &:hover{
+                //     cursor: pointer;
+                //     transition: 0.5s;
+                //     background: $hoverColor;
+                //     border: 2px solid $hoverColor;
+                // }
 
                 &:active{
                     transition: 0.5s;
@@ -387,12 +387,12 @@ $activeColor:#f1cdb3;
                                     border-radius: 100px;
                                     margin-bottom: 30px;
                 
-                                    &:hover{
-                                        cursor: pointer;
-                                        transition: 0.5s;
-                                        background: $hoverColor;
-                                        border: 2px solid $hoverColor;
-                                    }
+                                    // &:hover{
+                                    //     cursor: pointer;
+                                    //     transition: 0.5s;
+                                    //     background: $hoverColor;
+                                    //     border: 2px solid $hoverColor;
+                                    // }
                 
                                     &:active{
                                         border: 2px solid $activeColor;
@@ -563,20 +563,20 @@ $activeColor:#f1cdb3;
                 background: #f1cdb3;
                 margin-bottom: 20px;
 
-                &:hover{
-                    transition: 0.5s;
-                    background: $hoverColor;
+                // &:hover{
+                //     transition: 0.5s;
+                //     background: $hoverColor;
 
-                    .donation__link-icon-wrapper{
+                //     .donation__link-icon-wrapper{
 
-                        .donation__link-icon{
-                            transition: 0.5s;
-                            fill: #fefefe;
-                        }
+                //         .donation__link-icon{
+                //             transition: 0.5s;
+                //             fill: #fefefe;
+                //         }
 
-                    }
+                //     }
 
-                }
+                // }
 
                 &:active{
                     transition: 0.5s;
@@ -1575,6 +1575,32 @@ $activeColor:#f1cdb3;
                 }
             }
 
+        }
+
+    }
+
+}
+
+@media (hover: hover) {
+
+    .pets-slider__arrow{
+
+        &:hover{
+            cursor: pointer;
+            transition: 0.5s;
+            background: $hoverColor;
+            border: 2px solid $hoverColor;
+        }
+
+    }
+
+    .card-button{
+
+        &:hover{
+            cursor: pointer;
+            transition: 0.5s;
+            background: $hoverColor;
+            border: 2px solid $hoverColor;
         }
 
     }

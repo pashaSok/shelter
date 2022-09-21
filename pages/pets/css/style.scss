@@ -193,28 +193,6 @@ $activeColor:#f1cdb3;
                 box-sizing: border-box;
                 transition: 0.5s ease-in-out;
 
-                &:hover{
-
-                    cursor: pointer;
-
-                    .card-button{
-
-                        &:hover{
-                            cursor: pointer;
-                            transition: 0.5s;
-                            background: $hoverColor;
-                            border: 2px solid $hoverColor;
-                        }
-    
-                        &:active{
-                            border: 2px solid $activeColor;
-                            transition: 0.5s;
-                            background: $activeColor;
-                        }
-
-                    }
-                }
-
                 .pet-image{
                     width: 270px;
                     height: 270px;
@@ -249,12 +227,12 @@ $activeColor:#f1cdb3;
                     border-radius: 100px;
                     margin-bottom: 30px;
 
-                    &:hover{
-                        cursor: pointer;
-                        transition: 0.5s;
-                        background: $hoverColor;
-                        border: 2px solid $hoverColor;
-                    }
+                    // &:hover{
+                    //     cursor: pointer;
+                    //     transition: 0.5s;
+                    //     background: $hoverColor;
+                    //     border: 2px solid $hoverColor;
+                    // }
 
                     &:active{
                         border: 2px solid $activeColor;
@@ -294,16 +272,15 @@ $activeColor:#f1cdb3;
                 border: 2px solid #f1cdb3;
                 border-radius: 100px;
 
-                &:hover{
-                    cursor: pointer;
-                    transition: 0.5s;
-                    background: $hoverColor;
-                }
-
                 &:active{
                     transition: 0.5s;
                     background: $activeColor;
                 }
+
+                // &:hover{
+                //     transition: 0.5s;
+                //     background: $hoverColor;
+                // }
 
             }   
 
@@ -465,7 +442,6 @@ $activeColor:#f1cdb3;
     }
 
 }
-
 
 .popup-active{
     display: block !important;
@@ -983,6 +959,30 @@ $activeColor:#f1cdb3;
                 }
             }
 
+        }
+
+    }
+
+}
+
+@media (hover: hover) {
+    .our-pets__button{
+
+        &:hover{
+            cursor: pointer;
+            transition: 0.5s;
+            background: $hoverColor;
+        }
+
+    }
+
+    .card-button{
+
+        &:hover{
+            cursor: pointer;
+            transition: 0.5s;
+            background: $hoverColor;
+            border: 2px solid $hoverColor;
         }
 
     }
