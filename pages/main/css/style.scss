@@ -563,20 +563,20 @@ $activeColor:#f1cdb3;
                 background: #f1cdb3;
                 margin-bottom: 20px;
 
-                // &:hover{
-                //     transition: 0.5s;
-                //     background: $hoverColor;
+                &:hover{
+                    transition: 0.5s;
+                    background: $hoverColor;
 
-                //     .donation__link-icon-wrapper{
+                    .donation__link-icon-wrapper{
 
-                //         .donation__link-icon{
-                //             transition: 0.5s;
-                //             fill: #fefefe;
-                //         }
+                        .donation__link-icon{
+                            transition: 0.5s;
+                            fill: #fefefe;
+                        }
 
-                //     }
+                    }
 
-                // }
+                }
 
                 &:active{
                     transition: 0.5s;
