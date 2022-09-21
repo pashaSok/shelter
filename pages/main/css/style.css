@@ -447,6 +447,14 @@
   background: #f1cdb3;
   margin-bottom: 20px;
 }
+.donation .container .donation-content .donation__link-wrapper:hover {
+  transition: 0.5s;
+  background: #fddcc4;
+}
+.donation .container .donation-content .donation__link-wrapper:hover .donation__link-icon-wrapper .donation__link-icon {
+  transition: 0.5s;
+  fill: #fefefe;
+}
 .donation .container .donation-content .donation__link-wrapper:active {
   transition: 0.5s;
   background: #f1cdb3;
