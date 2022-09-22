@@ -97,7 +97,7 @@ Each DOM object (block) with a pet description, be it a slider, a pagination or 
 + Header (`<header>` contains only the logo and navigation bar)
 + Interactive navigation bar:
 + + Our pets element must be highlighted by default;
-+ +a highlighted Our pets element may not have hover effects.
++ + a highlighted Our pets element may not have hover effects.
 + Clicking on About the shelter takes us to the main page.
 + Clicking on About the shelter takes us to the main page.
 + Clicking on Help the shelter takes us to the Help box on the main page (anchor link).
